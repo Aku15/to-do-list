@@ -1,11 +1,12 @@
 const express = require('express');
+require("dotenv").config();
 const { default: mongoose } = require('mongoose');
 const path = require('path')
 const router = require('./routes.js')
 const app = express();
 
 //connection to db
-mongoose.connect('mongodb+srv://aku15atlas:NfFF5H6J7m9C71kj@soloprojectcluster.pnvqxti.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.URI)
 
 
 app.use(express.json())
